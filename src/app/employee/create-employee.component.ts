@@ -2,18 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-create-employee',
+  templateUrl: './create-employee.component.html',
+  styleUrls: ['./create-employee.component.css']
 })
-export class AppComponent implements OnInit{
+export class CreateEmployeeComponent implements OnInit {
+
+  constructor() { }
   employeeForm: FormGroup;
   ngOnInit(): void {
     this.employeeForm = new FormGroup({
       fullName: new FormControl(),
       email: new FormControl()
-
     });
-  }  
-  title = 'Angular6Project';
+  }
+  onSubmit():void {
+    console.log(this.employeeForm.value);
+  }
 }
